@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"net/http"
 	"sync"
 
@@ -65,11 +66,14 @@ func deleteMetadata(c *gin.Context) {
 }
 
 func main() {
+	address := flag.String("addr", ":8080", "HTTP server address (default :8080)")
+	flag.Parse()
+
 	r := gin.Default()
 
 	r.GET("/metadata", getMetadata)
 	r.PUT("/metadata", putMetadata)
 	r.DELETE("/metadata", deleteMetadata)
 
-	r.Run(":8080")
+	r.Run(*address)
 }
