@@ -26,7 +26,7 @@ transfer_engine_t createTransferEngine(const char *metadata_conn_string,
                                        const char *local_server_name,
                                        const char *ip_or_host_name,
                                        uint64_t rpc_port) {
-    TransferEngine *native = new TransferEngine();
+    TransferEngine *native = new TransferEngine(true);
     int ret = native->init(metadata_conn_string, local_server_name,
                            ip_or_host_name, rpc_port);
     if (ret) {
@@ -34,17 +34,6 @@ transfer_engine_t createTransferEngine(const char *metadata_conn_string,
         return nullptr;
     }
     return (transfer_engine_t)native;
-}
-
-transport_t installTransport(transfer_engine_t engine, const char *proto,
-                             void **args) {
-    TransferEngine *native = (TransferEngine *)engine;
-    return (transport_t)native->installTransport(proto, args);
-}
-
-int uninstallTransport(transfer_engine_t engine, const char *proto) {
-    TransferEngine *native = (TransferEngine *)engine;
-    return native->uninstallTransport(proto);
 }
 
 void destroyTransferEngine(transfer_engine_t engine) {

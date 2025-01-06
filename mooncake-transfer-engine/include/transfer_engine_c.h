@@ -91,17 +91,12 @@ typedef void *transport_t;
  * This means that the caller can free the memory pointed to by "char *"
  * parameters, after the call is completed.
  * All the C functions here follow this convention.
-*/
+ */
 
 transfer_engine_t createTransferEngine(const char *metadata_conn_string,
                                        const char *local_server_name,
                                        const char *ip_or_host_name,
                                        uint64_t rpc_port);
-
-transport_t installTransport(transfer_engine_t engine, const char *proto,
-                             void **args);
-
-int uninstallTransport(transfer_engine_t engine, const char *proto);
 
 segment_id_t openSegment(transfer_engine_t engine, const char *segment_name);
 
