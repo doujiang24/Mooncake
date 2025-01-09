@@ -56,6 +56,7 @@ class TransferEngine {
 
     int freeEngine();
 
+    // Only for testing.
     Transport *installTransport(const std::string &proto, void **args);
 
     int uninstallTransport(const std::string &proto);
@@ -114,7 +115,7 @@ class TransferEngine {
     std::vector<MemoryRegion> local_memory_regions_;
     std::shared_ptr<Topology> local_topology_;
     // Discover topology and install transports automatically when it's true.
-    // Set it to false for testing.
+    // Set it to false only for testing.
     bool auto_discover_;
 };
 }  // namespace mooncake
