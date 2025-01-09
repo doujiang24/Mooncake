@@ -43,7 +43,7 @@ using BufferEntry = Transport::BufferEntry;
 
 class TransferEngine {
    public:
-    TransferEngine(bool auto_discover = false)
+    TransferEngine(bool auto_discover = true)
         : metadata_(nullptr),
           local_topology_(std::make_shared<Topology>()),
           auto_discover_(auto_discover) {}
