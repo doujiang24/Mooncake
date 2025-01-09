@@ -18,7 +18,6 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"syscall"
 	"time"
@@ -28,10 +27,10 @@ import (
 )
 
 var (
-	command               string
-	metadataServer        string
-	localServerName       string
-	fileSize              int
+	command         string
+	metadataServer  string
+	localServerName string
+	fileSize        int
 )
 
 func main() {

@@ -22,8 +22,11 @@ package p2pstore
  * All the C functions used here follow this convention.
  */
 
-//#cgo LDFLAGS: -L../../../build/mooncake-transfer-engine/src -L../../../thirdparties/lib -ltransfer_engine -lstdc++ -lnuma -lglog -libverbs -ljsoncpp -letcd-cpp-api -lprotobuf -lgrpc++ -lgrpc
-//#include "../../../mooncake-transfer-engine/include/transfer_engine_c.h"
+/*
+#cgo LDFLAGS: -L../../../build/mooncake-transfer-engine/src -L../../../thirdparties/lib -ltransfer_engine -lstdc++ -lnuma -lglog -libverbs -ljsoncpp -letcd-cpp-api -lprotobuf -lgrpc++ -lgrpc
+#include "../../../mooncake-transfer-engine/include/transfer_engine_c.h"
+#include <stdlib.h>
+*/
 import "C"
 
 import (
