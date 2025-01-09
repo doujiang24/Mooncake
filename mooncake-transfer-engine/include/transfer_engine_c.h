@@ -83,7 +83,6 @@ typedef struct buffer_entry buffer_entry_t;
 
 typedef struct segment_desc segment_desc_t;
 typedef void *transfer_engine_t;
-typedef void *transport_t;
 
 /*
  * All memory pointed to by the "char *" parameters will not be used
